@@ -1,4 +1,45 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/redhattext/v3/RrQIbohi_ic6B3yVSzGBrMxY04I4Eu2EBVk.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/redhattext/v3/RrQIbohi_ic6B3yVSzGBrMxY04I4HO2E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Red Hat Text';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/redhattext/v3/RrQKbohi_ic6B3yVSzGBrMxQbZ-UHt2IHV20Lg.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Red Hat Text';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/redhattext/v3/RrQKbohi_ic6B3yVSzGBrMxQbZ-UHt2GHV0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 #wholepage {
+  position: relative;
   width: 1440px;
   height: 569px;
   background: url(../assets/bg-stars.svg);
@@ -7,14 +48,88 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-color: hsl(235, 16%, 14%);
 }
 
 #bottompage {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 1440px;
   height: 197px;
   margin: 0;
   padding: 0;
+}
+
+#socialnetworks {
+  position: absolute;
+  bottom: 15%;
+  left: 45%;
+}
+
+#launcher {
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+}
+
+#date {
+  position: absolute;
+  top: 30%;
+  left: 36.5%;
+}
+
+#remdays,
+#remhours,
+#remmin {
+  margin-right: -3%;
+}
+
+#unities {
+  width: 396px;
+  position: absolute;
+  top: 48%;
+  left: 36.5%;
+  color: hsl(237, 18%, 59%);
+  font-family: 'Red Hat Text';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 10px;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+  width: 75px;
+  height: 77px;
+}
+
+#days {
+  margin-left: 5.5%;
+}
+
+#hours {
+  margin-left: -1%;
+  margin-right: -2.5%;
+}
+
+#digits {
+  position: absolute;
+  top: 31%;
+  left: 37.2%;
+  width: 396px;
+  font-family: 'Red Hat Text';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 49px;
+  color: hsl(345, 95%, 68%);
+}
+
+#launchertxt {
+  text-align: center;
+  font-family: 'Red Hat Text';
+  font-weight: 700;
+  font-style: normal;
 }
