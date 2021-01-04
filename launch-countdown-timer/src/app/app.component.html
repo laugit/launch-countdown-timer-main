@@ -8,6 +8,16 @@
     <img id="remmin" class="col" src="../assets/calendar.svg">
     <img class="col" src="../assets/calendar.svg">
   </div>
+  <div id="subdate" class="row w-auto p-0 m-0">
+    <img id="remsubdays" [style.visibility]="dayset ? 'visible' : 'hidden'" [style.animationName] = "dayset ? 'rotation' : 'none'"
+      [style.animationDuration]="dayset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+    <img id="remsubhours" [style.visibility]="hourset ? 'visible' : 'hidden'" [style.animationName] = "hourset ? 'rotation' : 'none'"
+      [style.animationDuration]="hourset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+    <img id="remsubmin" [style.visibility]="minset ? 'visible' : 'hidden'" [style.animationName] = "minset ? 'rotation' : 'none'"
+      [style.animationDuration]="minset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+    <img id="remsubsec" [style.visibility]="secset ? 'visible' : 'hidden'" [style.animationName] = "secset ? 'rotation' : 'none'"
+      [style.animationDuration]="secset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+  </div>
   <div id="digits" class="row p-0 m-0">
     <div class="col">{{days}}</div>
     <div class="col">{{hours}}</div>
@@ -28,6 +38,7 @@
   </div>
   <img id="bottompage" src="../assets/pattern-hills.svg">
   <div id="socialnetworks" class="row p-0 m-0">
+    <!--TODO replace with real svg content-->
     <a href="#" class="col"><img src="../assets/icon-facebook.svg"></a>
     <a href="#" class="col"><img src="../assets/icon-pinterest.svg"></a>
     <a href="#" class="col"><img src="../assets/icon-instagram.svg"></a>

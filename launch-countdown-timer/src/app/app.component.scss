@@ -90,9 +90,18 @@
   left: 36.5%;
 }
 
+#subdate {
+  position: absolute;
+  top: 30%;
+  left: 36.5%;
+}
+
 #remdays,
 #remhours,
-#remmin {
+#remmin,
+#remsubdays,
+#remsubhours,
+#remsubmin {
   margin-right: -3%;
 }
 
@@ -139,4 +148,16 @@
   font-family: "Red Hat Text";
   font-weight: 700;
   font-style: normal;
+}
+
+@keyframes rotation {
+  0% {
+    transform: perspective(75px) rotateX(0deg);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(85%) perspective(75px) rotateX(-180deg);
+    opacity: 1;
+  }
 }

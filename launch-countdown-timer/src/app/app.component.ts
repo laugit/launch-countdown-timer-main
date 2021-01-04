@@ -11,6 +11,10 @@ export class AppComponent implements OnInit {
   hours = '23';
   minutes = '55';
   seconds = '41';
+  minset = false;
+  secset = false;
+  hourset = false;
+  dayset = false;
 
   computeTime(value: string, unit: string): void {
     const calc =
@@ -22,11 +26,23 @@ export class AppComponent implements OnInit {
     const prefix = parseInt(calc, 10).toString().length === 1 ? '0' : '';
     const result = prefix + calc;
     if (unit === 'seconds') {
+      this.secset = true;
       this.seconds = result;
+      setTimeout(() => {
+        this.secset = false;
+      }, 800);
     } else if (unit === 'minutes') {
+      this.minset = true;
       this.minutes = result;
+      setTimeout(() => {
+        this.minset = false;
+      }, 800);
     } else if (unit === 'hours') {
+      this.hourset = true;
       this.hours = result;
+      setTimeout(() => {
+        this.hourset = false;
+      }, 800);
     }
   }
 
@@ -41,7 +57,11 @@ export class AppComponent implements OnInit {
             const daycalc = (parseInt(this.days, 10) - 1).toString();
             const dayprefix =
               parseInt(daycalc, 10).toString().length === 1 ? '0' : '';
+            this.dayset = true;
             this.days = dayprefix + daycalc;
+            setTimeout(() => {
+              this.dayset = false;
+            }, 800);
           }
         }
       }
