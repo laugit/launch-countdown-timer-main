@@ -150,6 +150,12 @@
   font-style: normal;
 }
 
+#facebook path:hover,
+#pinterest path:hover,
+#instagram path:hover{
+  fill: hsl(345, 95%, 68%);
+}
+
 @keyframes rotation {
   0% {
     transform: perspective(75px) rotateX(0deg);
@@ -161,3 +167,4 @@
     opacity: 1;
   }
 }
+
