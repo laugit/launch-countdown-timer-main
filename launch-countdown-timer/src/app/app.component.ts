@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   secset = false;
   hourset = false;
   dayset = false;
+  displaytype = (window.innerWidth < 376) ? 'mobile' : 'desktop';
 
   computeTime(value: string, unit: string): void {
     const calc =
@@ -47,6 +48,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.onresize = () => {
+      this.displaytype = (window.innerWidth < 376) ? 'mobile' : 'desktop';
+    }
     setInterval(() => {
       this.computeTime(this.seconds, 'seconds');
       if (this.seconds === '59') {
