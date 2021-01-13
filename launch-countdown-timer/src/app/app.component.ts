@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'launch-countdown-timer';
-  days = '08';
-  hours = '23';
-  minutes = '55';
-  seconds = '41';
+  days = '14';
+  hours = '00';
+  minutes = '00';
+  seconds = '00';
   minset = false;
   secset = false;
   hourset = false;

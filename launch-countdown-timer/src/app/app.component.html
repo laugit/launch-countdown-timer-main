@@ -1,45 +1,68 @@
 <div [style.width]="displaytype === 'mobile' ? '375px' : '1440px'" id="wholepage">
   <div id="launcher" class="row w-100 p-0 m-0">
-    <pre id="launchertxt">W E <i>'</i> R E  L A U N C H I N G  S O O N</pre>
+    <pre *ngIf="displaytype==='desktop'" id="launchertxt" style="font-size:14px">W E <i>'</i> R E  L A U N C H I N G  S O O N</pre>
+    <pre *ngIf="displaytype==='mobile'" id="launchertxt" style="font-size:17px">W E <i>'</i> R E  L A U N C H I N G
+S O O N</pre>
   </div>
-  <div id="date" [style.left]="displaytype === 'mobile' ? '10%' : '36.5%'" class="row w-auto p-0 m-0">
-    <img id="remdays" class="col" src="../assets/calendar.svg">
-    <img id="remhours" class="col" src="../assets/calendar.svg">
-    <img id="remmin" class="col" src="../assets/calendar.svg">
-    <img class="col" src="../assets/calendar.svg">
+  <div id="date" [style.left]="displaytype === 'mobile' ? '2%' : '36.5%'" class="row w-auto p-0 m-0">
+    <img id="remdays" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-calendar.svg' : '../assets/calendar.svg'">
+    <img id="remhours" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-calendar.svg' : '../assets/calendar.svg'">
+    <img id="remmin" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-calendar.svg' : '../assets/calendar.svg'">
+    <img class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-calendar.svg' : '../assets/calendar.svg'">
   </div>
-  <div id="subdate" [style.left]="displaytype === 'mobile' ? '10%' : '36.5%'" class="row w-auto p-0 m-0">
+  <div id="subdate" [style.left]="displaytype === 'mobile' ? '2%' : '36.5%'" class="row w-auto p-0 m-0">
     <img id="remsubdays" [style.visibility]="dayset ? 'visible' : 'hidden'" [style.animationName] = "dayset ? 'rotation' : 'none'"
-      [style.animationDuration]="dayset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+      [style.animationDuration]="dayset ? '0.8s' : '0s'" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-subtransparentrect.svg' : '../assets/subtransparentrect.svg'">
     <img id="remsubhours" [style.visibility]="hourset ? 'visible' : 'hidden'" [style.animationName] = "hourset ? 'rotation' : 'none'"
-      [style.animationDuration]="hourset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+      [style.animationDuration]="hourset ? '0.8s' : '0s'" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-subtransparentrect.svg' : '../assets/subtransparentrect.svg'">
     <img id="remsubmin" [style.visibility]="minset ? 'visible' : 'hidden'" [style.animationName] = "minset ? 'rotation' : 'none'"
-      [style.animationDuration]="minset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+      [style.animationDuration]="minset ? '0.8s' : '0s'" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-subtransparentrect.svg' : '../assets/subtransparentrect.svg'">
     <img id="remsubsec" [style.visibility]="secset ? 'visible' : 'hidden'" [style.animationName] = "secset ? 'rotation' : 'none'"
-      [style.animationDuration]="secset ? '0.8s' : '0s'" class="col" src="../assets/subtransparentrect.svg">
+      [style.animationDuration]="secset ? '0.8s' : '0s'" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-subtransparentrect.svg' : '../assets/subtransparentrect.svg'">
   </div>
-  <div id="digits" class="row p-0 m-0">
+  <div id="digits" [style.left]="displaytype === 'mobile' ? '5.7%' : '37.2%'" 
+  [style.width]="displaytype === 'mobile' ? '350px' : '396px'"
+  [style.top]="displaytype === 'mobile' ? '32%' : '31%'"
+  [style.fontSize]="displaytype === 'mobile' ? '35px' : '47px'"
+  class="row p-0 m-0">
     <div class="col">{{days}}</div>
     <div class="col">{{hours}}</div>
     <div class="col">{{minutes}}</div>
     <div id="dynsec" class="col">{{seconds}}</div>
   </div>
-  <div id="date" [style.left]="displaytype === 'mobile' ? '10%' : '36.5%'" class="row w-auto p-0 m-0">
-    <img id="remdays" class="col" src="../assets/transparentrect.svg">
-    <img id="remhours" class="col" src="../assets/transparentrect.svg">
-    <img id="remmin" class="col" src="../assets/transparentrect.svg">
-    <img class="col" src="../assets/transparentrect.svg">
+  <div id="date" [style.left]="displaytype === 'mobile' ? '2%' : '36.5%'" class="row w-auto p-0 m-0">
+    <img id="remdays" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-transparentrect.svg' : '../assets/transparentrect.svg'">
+    <img id="remhours" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-transparentrect.svg' : '../assets/transparentrect.svg'">
+    <img id="remmin" class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-transparentrect.svg' : '../assets/transparentrect.svg'">
+    <img class="col" [src]="displaytype === 'mobile' ? '../assets/mobile-transparentrect.svg' : '../assets/transparentrect.svg'">
   </div>
-  <div id="unities" class="row p-0 m-0">
-    <div id="days" class="col"><pre>D A Y S</pre></div>
-    <div id="hours" class="col"><pre>H O U R S</pre></div>
-    <div id="minutes" class="col"><pre>M I N U T E S</pre></div>
-    <div id="seconds" class="col"><pre>S E C O N D S</pre></div>
+  <div id="unities" [style.left]="displaytype === 'mobile' ? '-0.5%' : '36.5%'"
+  [style.width]="displaytype === 'mobile' ? '375px' : '396px'"
+  [style.top]="displaytype === 'mobile' ? '46%' : '48%'"
+  class="row p-0 m-0">
+    <div id="days" [style.height]="displaytype === 'mobile' ? '67px' : '77px'" 
+    [style.textAlign]="displaytype === 'mobile' ? 'right' :  'center'"
+    class="col">
+      <pre>D A Y S</pre>
+    </div>
+    <div id="hours" [style.height]="displaytype === 'mobile' ? '67px' : '77px'" class="col">
+      <pre>H O U R S</pre>
+    </div>
+    <div id="minutes" [style.height]="displaytype === 'mobile' ? '67px' : '77px'" class="col">
+      <pre>M I N U T E S</pre>
+    </div>
+    <div id="seconds" [style.height]="displaytype === 'mobile' ? '67px' : '77px'" 
+    [style.textAlign]="displaytype === 'mobile' ? 'left' :  'center'"
+    class="col">
+      <pre>S E C O N D S</pre>
+    </div>
   </div>
   <img [style.width]="displaytype === 'mobile' ? '375px' : '1440px'" id="bottompage"
   [style.objectFit] = "displaytype === 'mobile' ? 'cover' : 'none'" [style.objectPosition] = "displaytype === 'mobile' ? '68% 0' : '0% 0'"
-  [src]="displaytype === 'mobile' ? '../assets/resized-pattern-hills.svg' : '../assets/pattern-hills.svg'">
-  <div [style.left]="displaytype === 'mobile' ? '30%' : '45%'" id="socialnetworks" class="row p-0 m-0">
+  [src]="displaytype === 'mobile' ? '../assets/mobile-pattern-hills.svg' : '../assets/pattern-hills.svg'">
+  <div [style.left]="displaytype === 'mobile' ? '30%' : '45%'" 
+  [style.bottom]="displaytype === 'mobile' ? '5%' : '15%'"
+  id="socialnetworks" class="row p-0 m-0">
     <a id="facebook" href="#" class="col">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <path fill="#8385A9" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>

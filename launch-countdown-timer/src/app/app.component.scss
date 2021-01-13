@@ -71,7 +71,6 @@
 
 #socialnetworks {
   position: absolute;
-  bottom: 15%;
 }
 
 #launcher {
@@ -101,36 +100,34 @@
 }
 
 #unities {
-  width: 396px;
   position: absolute;
-  top: 48%;
-  left: 36.5%;
+  display: grid;
+  grid-template-columns: 23% 23% 26% 27%;
+  justify-content: center;
   color: hsl(237, 18%, 59%);
   font-family: "Red Hat Text";
   font-weight: 700;
   font-style: normal;
-  font-size: 10px;
+  font-size: 9.4px;
 }
 
-#days,
-#hours,
-#minutes,
-#seconds {
-  width: 75px;
-  height: 77px;
-  display: grid;
+#days, #seconds{
   justify-content: space-evenly;
+}
+
+#hours{
+  justify-content: space-evenly;
+}
+
+#hours, #minutes{
+  text-align:right;
 }
 
 #digits {
   position: absolute;
-  top: 31%;
-  left: 37.2%;
-  width: 396px;
   font-family: "Red Hat Text";
   font-weight: 700;
   font-style: normal;
-  font-size: 49px;
   color: hsl(345, 95%, 68%);
 }
 
